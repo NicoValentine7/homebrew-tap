@@ -1,9 +1,9 @@
 class ClaudeCodeRateWatcher < Formula
   desc "macOS menu bar app to monitor Claude Code API rate limits"
   homepage "https://nicovalentine7.github.io/claude-code-rate-watcher/"
-  url "https://github.com/NicoValentine7/claude-code-rate-watcher/releases/download/v0.4.2/claude-code-rate-watcher-macos-universal.tar.gz"
-  sha256 "a22be70c65061b98bb665010141fedbdb31e50c74f1f7941be8136fd3ccd9188"
-  version "0.4.2"
+  url "https://github.com/NicoValentine7/claude-code-rate-watcher/releases/download/v0.5.0/claude-code-rate-watcher-macos-universal.tar.gz"
+  sha256 "90fa35b1d69a4e40c5c560f810053e899c8d14444e1590e763ca2f9acd5e6ffa"
+  version "0.5.0"
   license "MIT"
 
   depends_on :macos
