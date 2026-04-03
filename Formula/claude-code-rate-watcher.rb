@@ -2,23 +2,26 @@ class ClaudeCodeRateWatcher < Formula
   desc "macOS menu bar app to monitor Claude Code API rate limits"
   homepage "https://nicovalentine7.github.io/claude-code-rate-watcher/"
   url "https://github.com/NicoValentine7/claude-code-rate-watcher/releases/download/v0.11.1/claude-code-rate-watcher-macos-app.tar.gz"
-  sha256 "bc1972521edde01c9a80a7b3fa30b7b911d18df5dd22951392f52d1fd6ce3ee3"
+  sha256 "f0504134f427620b128b8aa4bc65b5df08dad952ca00676a8d6dfe44286e1a11"
   version "0.11.1"
   license "MIT"
 
   depends_on :macos
 
   def install
-    app_name = "Claude Code Rate Watcher.app"
-    prefix.install buildpath/app_name
-    (bin/"ccrw").write_env_script prefix/app_name/"Contents/MacOS/ccrw", {}
+    prefix.install "Claude Code Rate Watcher.app"
+    bin.write_exec_script prefix/"Claude Code Rate Watcher.app/Contents/MacOS/ccrw"
   end
 
   def caveats
     <<~EOS
-      To start Claude Code Rate Watcher, run:
+      Claude Code Rate Watcher has been installed as an app bundle.
 
+      To start, run:
         ccrw
+
+      Or open from:
+        #{prefix}/Claude Code Rate Watcher.app
 
       Launch at Login is enabled automatically on first run.
       You can toggle it off in the popover menu.
