@@ -9,19 +9,13 @@ class ClaudeCodeRateWatcher < Formula
   depends_on :macos
 
   def install
-    prefix.install "Claude Code Rate Watcher.app"
-    bin.write_exec_script prefix/"Claude Code Rate Watcher.app/Contents/MacOS/ccrw"
+    bin.install "ccrw"
   end
 
   def caveats
     <<~EOS
-      Claude Code Rate Watcher has been installed as an app bundle.
-
       To start, run:
         ccrw
-
-      Or open from:
-        #{prefix}/Claude Code Rate Watcher.app
 
       Launch at Login is enabled automatically on first run.
       You can toggle it off in the popover menu.
@@ -33,6 +27,6 @@ class ClaudeCodeRateWatcher < Formula
   end
 
   test do
-    assert_predicate prefix/"Claude Code Rate Watcher.app", :exist?
+    assert_match version.to_s, shell_output("#{bin}/ccrw --version")
   end
 end
